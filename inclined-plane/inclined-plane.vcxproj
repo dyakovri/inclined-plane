@@ -126,6 +126,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Cylinder.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="RungeKutta.cpp" />
     <ClCompile Include="Window.cpp" />
@@ -138,6 +139,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cylinder.h" />
     <ClInclude Include="RungeKutta.h" />
     <ClInclude Include="Window.h">
       <FileType>CppForm</FileType>
