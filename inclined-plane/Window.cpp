@@ -30,6 +30,10 @@ namespace inclinedplane {
 		chart1->Series["Plane"]->Points->AddXY(0, (double)h->Value);
 		chart1->Series["Plane"]->Points->AddXY((double)w->Value, 0);
 		chart1->Series["Plane"]->Points->AddXY(0, 0);
+
+		// Устанавливаем масштаб
+		chart1->ChartAreas[0]->AxisX->Maximum = (double)scale_x->Value;
+		chart1->ChartAreas[0]->AxisY->Maximum = (double)scale_y->Value;
 	}
 
 	System::Void Window::stop_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -65,5 +69,10 @@ namespace inclinedplane {
 		chart1->Series["Dot"]->Points->AddXY(c->get_dot_x(), c->get_dot_y());
 
 		if (c->get_cylinder_y() - (double)r->Value < 0) timer1->Enabled = false;
+	}
+	System::Void Window::scale_changed(System::Object ^ sender, System::EventArgs ^ e)
+	{
+		chart1->ChartAreas[0]->AxisX->Maximum = (double)scale_x->Value;
+		chart1->ChartAreas[0]->AxisY->Maximum = (double)scale_y->Value;
 	}
 }

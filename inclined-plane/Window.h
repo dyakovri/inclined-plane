@@ -56,6 +56,13 @@ namespace inclinedplane {
 	private: System::Windows::Forms::Button^  start;
 	private: System::Windows::Forms::Button^  stop;
 	private: System::Windows::Forms::Timer^  timer1;
+	private: System::Windows::Forms::NumericUpDown^  scale_x;
+	private: System::Windows::Forms::NumericUpDown^  scale_y;
+	private: System::Windows::Forms::Label^  label7;
+	private: System::Windows::Forms::Label^  label8;
+	private: System::Windows::Forms::Label^  label9;
+
+
 	private: System::ComponentModel::IContainer^  components;
 
 
@@ -74,10 +81,10 @@ namespace inclinedplane {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series3 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea2 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series4 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
@@ -92,11 +99,18 @@ namespace inclinedplane {
 			this->start = (gcnew System::Windows::Forms::Button());
 			this->stop = (gcnew System::Windows::Forms::Button());
 			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
+			this->scale_x = (gcnew System::Windows::Forms::NumericUpDown());
+			this->scale_y = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->label9 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->w))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->h))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->r))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->m))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->scale_x))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->scale_y))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// label1
@@ -141,31 +155,31 @@ namespace inclinedplane {
 			// 
 			// chart1
 			// 
-			chartArea1->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea1);
+			chartArea2->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea2);
 			this->chart1->Location = System::Drawing::Point(207, 12);
 			this->chart1->Name = L"chart1";
 			this->chart1->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::Grayscale;
-			series1->ChartArea = L"ChartArea1";
-			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
-			series1->Name = L"Wheel";
-			series1->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
-			series1->YValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
-			series2->ChartArea = L"ChartArea1";
-			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::FastPoint;
-			series2->Name = L"Dot";
-			series2->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
-			series2->YValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
-			series3->BorderWidth = 3;
-			series3->ChartArea = L"ChartArea1";
-			series3->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::FastLine;
-			series3->Color = System::Drawing::Color::Black;
-			series3->Name = L"Plane";
-			series3->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
-			series3->YValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
-			this->chart1->Series->Add(series1);
-			this->chart1->Series->Add(series2);
-			this->chart1->Series->Add(series3);
+			series4->ChartArea = L"ChartArea1";
+			series4->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Line;
+			series4->Name = L"Wheel";
+			series4->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
+			series4->YValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
+			series5->ChartArea = L"ChartArea1";
+			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::FastPoint;
+			series5->Name = L"Dot";
+			series5->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
+			series5->YValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
+			series6->BorderWidth = 3;
+			series6->ChartArea = L"ChartArea1";
+			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::FastLine;
+			series6->Color = System::Drawing::Color::Black;
+			series6->Name = L"Plane";
+			series6->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
+			series6->YValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
+			this->chart1->Series->Add(series4);
+			this->chart1->Series->Add(series5);
+			this->chart1->Series->Add(series6);
 			this->chart1->Size = System::Drawing::Size(565, 378);
 			this->chart1->TabIndex = 1;
 			this->chart1->Text = L"chart1";
@@ -254,11 +268,63 @@ namespace inclinedplane {
 			this->timer1->Interval = 10;
 			this->timer1->Tick += gcnew System::EventHandler(this, &Window::timer1_Tick);
 			// 
+			// scale_x
+			// 
+			this->scale_x->Location = System::Drawing::Point(63, 329);
+			this->scale_x->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
+			this->scale_x->Name = L"scale_x";
+			this->scale_x->Size = System::Drawing::Size(85, 20);
+			this->scale_x->TabIndex = 4;
+			this->scale_x->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 30, 0, 0, 0 });
+			this->scale_x->ValueChanged += gcnew System::EventHandler(this, &Window::scale_changed);
+			// 
+			// scale_y
+			// 
+			this->scale_y->Location = System::Drawing::Point(63, 355);
+			this->scale_y->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
+			this->scale_y->Name = L"scale_y";
+			this->scale_y->Size = System::Drawing::Size(85, 20);
+			this->scale_y->TabIndex = 4;
+			this->scale_y->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 18, 0, 0, 0 });
+			this->scale_y->ValueChanged += gcnew System::EventHandler(this, &Window::scale_changed);
+			// 
+			// label7
+			// 
+			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label7->Location = System::Drawing::Point(12, 313);
+			this->label7->Name = L"label7";
+			this->label7->Size = System::Drawing::Size(112, 13);
+			this->label7->TabIndex = 5;
+			this->label7->Text = L"Масштаб по осям";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Location = System::Drawing::Point(12, 331);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(40, 13);
+			this->label8->TabIndex = 0;
+			this->label8->Text = L"Длина";
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(12, 357);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(45, 13);
+			this->label9->TabIndex = 0;
+			this->label9->Text = L"Высота";
+			// 
 			// Window
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(784, 402);
+			this->Controls->Add(this->label7);
+			this->Controls->Add(this->scale_y);
+			this->Controls->Add(this->scale_x);
 			this->Controls->Add(this->stop);
 			this->Controls->Add(this->start);
 			this->Controls->Add(this->m);
@@ -267,8 +333,10 @@ namespace inclinedplane {
 			this->Controls->Add(this->w);
 			this->Controls->Add(this->chart1);
 			this->Controls->Add(this->label6);
+			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label5);
+			this->Controls->Add(this->label8);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label1);
@@ -279,6 +347,8 @@ namespace inclinedplane {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->h))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->r))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->m))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->scale_x))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->scale_y))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -289,5 +359,6 @@ namespace inclinedplane {
 		private: System::Void start_Click(System::Object^  sender, System::EventArgs^  e);
 		private: System::Void stop_Click(System::Object^  sender, System::EventArgs^  e);
 		private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e);
+		private: System::Void scale_changed(System::Object^  sender, System::EventArgs^  e);
 	};
 }
